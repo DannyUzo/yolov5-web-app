@@ -87,7 +87,13 @@ const WebcamFeed = () => {
     }
   };
 
-  const drawDetections = (detections: any[]) => {
+  interface Detection {
+    box: [number, number, number, number];
+    label: string;
+    confidence: number;
+  }
+
+  const drawDetections = (detections: Detection[]) => {
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
