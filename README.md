@@ -43,6 +43,8 @@ Make sure **YOLOv5 is set up** before running the backend.
 
 ```sh
 cd yolo-backend
+python -m venv venv
+venv\Scripts\Activate
 python app.py
 ```
 
