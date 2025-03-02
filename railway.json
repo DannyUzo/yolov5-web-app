@@ -1,0 +1,22 @@
+{
+    "build": {
+      "builder": "NIXPACKS",
+      "nixpacksConfig": {
+        "phases": {
+          "setup": {
+            "nixPkgs": ["python3", "gcc"]
+          },
+          "install": {
+            "cmds": [
+              "python -m venv /opt/venv",
+              "/opt/venv/bin/pip install -r requirements.txt"
+            ]
+          },
+          "start": {
+            "cmd": "gunicorn -b 0.0.0.0:8000 app:app"
+          }
+        }
+      }
+    }
+  }
+  
